@@ -17,7 +17,7 @@ const Options = ({ counter, updateFeedback, handleReset, totalFeedback }) => {
       ))}
       {totalFeedback !== 0 && (
         <li className={styles.list_item}>
-          <button className={styles.button_group} onClick={handleReset}>
+          <button className={styles.button} onClick={handleReset}>
             Reset
           </button>
         </li>

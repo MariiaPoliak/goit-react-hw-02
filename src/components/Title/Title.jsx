@@ -2,7 +2,7 @@ import styles from "./Title.module.css";
 
 const Title = () => {
   return (
-    <header className={styles.header}>
+    <header className={styles.title_box}>
       <div className={styles.contentWrapper}>
         <h1 className={styles.mainTitle}>Sip Happens Cafe</h1>
         <p className={styles.subTitle}>

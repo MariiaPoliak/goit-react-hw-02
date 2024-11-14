@@ -1,4 +1,4 @@
-.wrap_app{
+.wrap_app {
   border: 2px solid red;
   padding-bottom: 20px;
   border-radius: 5px;
@@ -6,7 +6,6 @@
 }
 
 .wrap_app::after {
-  content: "App";
   position: absolute;
   right: 50px;
   bottom: 15%;
@@ -16,7 +15,6 @@
 }
 
 .wrap_app::before {
-  content: "";
   position: absolute;
   display: block;
   right: 5px;
