@@ -11,55 +11,44 @@ function App() {
     return savedData ? JSON.parse(savedData) : { good: 0, neutral: 0, bad: 0 };
   });
 
-  const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
-
-  const handleReset = () => {
-    setCounter({ good: 0, neutral: 0, bad: 0 });
-  };
+  const totalFeedback = counter.good + counter.neutral + counter.bad;
+  const positiveFeedback = totalFeedback
+    ? Math.round((counter.good / totalFeedback) * 100)
+    : 0;
 
   useEffect(() => {
     window.localStorage.setItem("data", JSON.stringify(counter));
   }, [counter]);
 
-  const { good, neutral, bad } = counter;
-  const totalFeedback = good + neutral + bad;
-  const positiveFeedback =
-    totalFeedback === 0 ? 0 : Math.round((good / totalFeedback) * 100);
-
-  // Update feedback count based on type
-  const updateFeedback = (type) => {
+  //копія існуючого об’єкту
+  const updateFeedback = (option) => {
     setCounter((prev) => ({
       ...prev,
-      [type]: prev[type] + 1,
+      [option]: prev[option] + 1,
     }));
   };
 
-  useEffect(() => {
-    if (totalFeedback !== 0) {
-      setIsFeedbackVisible(true);
-    }
-  }, [totalFeedback]);
+  const handleReset = () => {
+    setCounter({ good: 0, neutral: 0, bad: 0 });
+  };
 
   return (
     <div className="wrap_app">
       <Title />
       <Options
-        counter={counter}
         updateFeedback={updateFeedback}
         handleReset={handleReset}
         totalFeedback={totalFeedback}
       />
-      <div onClick={() => setIsFeedbackVisible(true)}>
-        {isFeedbackVisible ? (
-          <Feedback
-            feedbackCounts={counter}
-            totalFeedback={totalFeedback}
-            positiveFeedback={positiveFeedback}
-          />
-        ) : (
-          <Notification />
-        )}
-      </div>
+      {totalFeedback > 0 ? (
+        <Feedback
+          feedbackCounts={counter}
+          totalFeedback={totalFeedback}
+          positiveFeedback={positiveFeedback}
+        />
+      ) : (
+        <Notification />
+      )}
     </div>
   );
 }

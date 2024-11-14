@@ -45,9 +45,5 @@
 
   .list_item:hover {
     background-color: hsl(300, 95%, 76%);
-    color: white;
-  }
-  .button {
-    fill: hsl(300, 41%, 58%);
   }
 }

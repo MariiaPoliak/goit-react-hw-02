@@ -1,29 +1,33 @@
 import styles from "./Options.module.css";
 
-const Options = ({ counter, updateFeedback, handleReset, totalFeedback }) => {
-  const feedbackTypes = ["good", "neutral", "bad"];
-
+function Options({ updateFeedback, totalFeedback, handleReset }) {
   return (
-    <ul className={styles.list}>
-      {feedbackTypes.map((type) => (
-        <li key={type} className={styles.list_item}>
-          <button
-            className={styles.button_group}
-            onClick={() => updateFeedback(type)}
-          >
-            {type.charAt(0).toUpperCase() + type.slice(1)}
-          </button>
-        </li>
-      ))}
-      {totalFeedback !== 0 && (
-        <li className={styles.list_item}>
-          <button className={styles.button} onClick={handleReset}>
-            Reset
-          </button>
-        </li>
+    <div className={styles.list}>
+      <button
+        className={styles.list_item}
+        onClick={() => updateFeedback("good")}
+      >
+        Good
+      </button>
+      <button
+        className={styles.list_item}
+        onClick={() => updateFeedback("neutral")}
+      >
+        Neutral
+      </button>
+      <button
+        className={styles.list_item}
+        onClick={() => updateFeedback("bad")}
+      >
+        Bad
+      </button>
+      {totalFeedback > 0 && (
+        <button className={styles.list_item} onClick={handleReset}>
+          Reset
+        </button>
       )}
-    </ul>
+    </div>
   );
-};
+}
 
 export default Options;
