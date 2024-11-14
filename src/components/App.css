@@ -1,0 +1,28 @@
+.wrap_app{
+  border: 2px solid red;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.wrap_app::after {
+  content: "App";
+  position: absolute;
+  right: 50px;
+  bottom: 15%;
+  color: red;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.wrap_app::before {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 5px;
+  bottom: 17%;
+  background-color: red;
+  width: 40px;
+  height: 2px;
+  transform: rotate(10deg);
+}

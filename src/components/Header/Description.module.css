@@ -1,0 +1,43 @@
+.heder{
+  border: 2px solid blue;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.heder::after{
+  content: "Description";
+position: absolute;
+right: 20%;
+bottom: -60%;
+color: blue;
+font-weight: 600;
+font-size: 20px;
+}
+
+.heder::before {
+  content: "";
+    position: absolute;
+    display: block;
+    right: 30%;
+    bottom: -20%;
+    background-color: blue;
+  width: 40px;
+  height: 2px;
+  transform: rotate(40deg);
+}
+
+
+.title1{
+font-size: 40px;
+letter-spacing: 1.2;
+font-weight: 600;
+}
+
+.paragraph{
+font-size: 30px;
+  letter-spacing: 1.5;
+  font-weight: 400;
+}

@@ -1,0 +1,42 @@
+.list {
+  margin-top: 10px;
+  border: 3px solid hwb(60 4% 41% / 0.87);
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  display: inline-block;
+}
+
+.list::after {
+  content: "Feedback";
+  position: absolute;
+  right: -160px;
+  bottom: 25%;
+  color: hwb(60 4% 41% / 0.87);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.list::before {
+  content: "";
+  position: absolute;
+  display: block;
+  right: -60px;
+  bottom: 40%;
+  background-color: hwb(60 4% 41% / 0.87);
+  width: 50px;
+  height: 2px;
+  transform: rotate(10deg);
+}
+
+.item {
+  letter-spacing: 1.2;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.item>span{
+  display: inline-block;
+  width: 50px;
+  height: auto;
+}
