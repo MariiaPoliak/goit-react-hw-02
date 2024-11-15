@@ -1,6 +1,6 @@
-import styles from "./Title.module.css";
+import styles from "./Description.module.css";
 
-const Title = () => {
+const Description = () => {
   return (
     <header className={styles.title_box}>
       <div className={styles.contentWrapper}>
@@ -14,4 +14,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default Description;
